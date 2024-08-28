@@ -86,7 +86,7 @@ document.addEventListener('mousemove', (e) => {
 
     // 범위 내에 있는지 체크 (width와 height가 모두 0보다 큰지 확인)
     if (x >= 0 && y >= 0 && x <= back2Rect.width && y <= back2Rect.height) {
-        back2.style.clipPath = `circle(5% at ${x}px ${y}px)`;
+        back2.style.clipPath = `circle(7% at ${x}px ${y}px)`;
         back2.classList.add('highlight');
     } else {
         back2.classList.remove('highlight');
