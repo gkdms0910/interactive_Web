@@ -1,6 +1,9 @@
 html {
     font-size: 16px;
+    cursor: none;
   }
+
+
 
 body {
     margin: 0;
@@ -10,6 +13,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: auto;
+    cursor: none;
 }
 
 
@@ -98,5 +102,6 @@ body.overlay-active {
     position: absolute;
     gap: 0.5%;
     z-index: 2; /* 이미지가 캔버스 위에 오도록 설정 */
+    cursor: none;
 }
 
