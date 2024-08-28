@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto;
+}
+
+
+
+.image-container {
+    position: relative;
+    width: 30%;
+    cursor: pointer;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border: 2px solid white;
+    display: block;
+    position: relative;
+    z-index: 1.5;
+    opacity: 0.0; /* 기본 상태에서 투명도 50% 적용 */
+    transition: opacity 0.5s ease; /* 클릭 시 부드럽게 변경되도록 설정 */
+}
+
+.image-container.active .gallery-image {
+    opacity: 1; /* 클릭 시 투명도 100%로 변경 */
+}
+
+.image-text {
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    top: 50%;
+    left: 105%;
+    transform: translateY(-50%);
+    display: none;
+    z-index: 2;
+    max-width: 300px;
+    white-space: normal;
+    line-height: 1.5;
+    text-align: left;
+}
+
+body.overlay-active {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#back1 {
+    z-index: 0.5;
+}
+#back2 {
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none; /* 마우스 이벤트가 캔버스에 전달되도록 설정 */
+}
+
+/* 마우스가 지나간 부분의 투명도를 1로 변경하는 효과 */
+#back2.highlight {
+    opacity: 1;
+    /*mix-blend-mode: lighten; /* 투명도를 조정할 때 부드럽게 처리되도록 설정 */
+}
+
+
+.backImg {
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+
+}
+
+
+
+#canvas1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1; /* 캔버스가 두 번째 배경 이미지 위에 오도록 설정 */
+}
+
+.gallery {
+    left: 57.5rem;
+    top: 9rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 61%;
+    position: absolute;
+    gap: 0.05rem;
+    z-index: 2; /* 이미지가 캔버스 위에 오도록 설정 */
+}
+
