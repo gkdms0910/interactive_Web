@@ -15,7 +15,7 @@ images.forEach(imageContainer => {
                 duration: 0.8,
                 x: window.innerWidth / 2 - imageContainer.getBoundingClientRect().left - imageContainer.offsetWidth / 2,
                 y: window.innerHeight / 2 - imageContainer.getBoundingClientRect().top - imageContainer.offsetHeight / 2,
-                scale: 1.2,
+                scale: 2.0,
                 zIndex: 1000,
                 ease: "power3.out"
             });
