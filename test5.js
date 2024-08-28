@@ -15,7 +15,7 @@ images.forEach(imageContainer => {
                 duration: 0.8,
                 x: window.innerWidth / 2 - imageContainer.getBoundingClientRect().left - imageContainer.offsetWidth / 2,
                 y: window.innerHeight / 2 - imageContainer.getBoundingClientRect().top - imageContainer.offsetHeight / 2,
-                scale: 2.0,
+                scale: 2,
                 zIndex: 1000,
                 ease: "power3.out"
             });
@@ -78,12 +78,13 @@ window.onresize = () =>
 }
 
 const back2 = document.getElementById('back2');
-const back2Rect = back2.getBoundingClientRect();
 
 document.addEventListener('mousemove', (e) => {
+    const back2Rect = back2.getBoundingClientRect();
     const x = e.clientX - back2Rect.left;
     const y = e.clientY - back2Rect.top;
 
+    // 범위 내에 있는지 체크 (width와 height가 모두 0보다 큰지 확인)
     if (x >= 0 && y >= 0 && x <= back2Rect.width && y <= back2Rect.height) {
         back2.style.clipPath = `circle(5% at ${x}px ${y}px)`;
         back2.classList.add('highlight');
